@@ -1,6 +1,8 @@
 @echo off
 setlocal
 title Installer
+set "originalDir=%CD%"
+
 
 :: Check for administrative privileges
 net session >nul 2>&1
@@ -10,6 +12,7 @@ if %errorLevel% == 0 (
 ) else (
     echo Attempting to relaunch with administrative privileges...
 )
+cd /d "%originalDir%"
 
 :: Relaunch the script with administrative privileges
 set "vbs=%temp%\elevate.vbs"
