@@ -3,7 +3,6 @@ setlocal
 title Installer
 set "originalDir=%CD%"
 
-
 :: Check for administrative privileges
 net session >nul 2>&1
 if %errorLevel% == 0 (
